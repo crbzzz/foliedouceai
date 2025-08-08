@@ -13,7 +13,7 @@ Then, install requirements :
 After, you have to create a venv with python : In AI Folder, open a CMD : 
 -> python -m venv .venv
 
---- Add AI Model from https://huggingface.co/ in AI/models folder ---
+--- Add AI Model from https://huggingface.co/ in AI/models folder. I personnaly used DeepSeekV2 Model to create the chatbot, but i'll try other models---
 -> Add in foliedouce.py the model adress in default = ROOT / "models" / "yourmodel.gguf"
 Run CMD in AI Folder 
 
