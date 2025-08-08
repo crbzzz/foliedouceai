@@ -5,7 +5,11 @@ FolieDouce is a random name for a random AI project around Models, python and ch
 Developped by **crbzzz**
 
 
-**First** : Insall Visual Studio 2022 -> Desktop C++ 
+**First** : 
+
+CREATE A FILE NAMED : **AI**
+
+-> Insall Visual Studio 2022 -> Desktop C++ 
 
 **Then**, install requirements : 
 -> pip install -r requirements.txt
