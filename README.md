@@ -4,6 +4,7 @@ FolieDouce is a random name for a random AI project around Models, python and ch
 
 Developped by **crbzzz**
 
+**Patch 1.0.0 : 08/08/2025**
 
 **First** : 
 
@@ -29,5 +30,10 @@ Try it ! **The Installation Doc should work, i made it after hours of work with 
 This Package had been designed by crbzz in order to create a chatbot that is specialized in RedM / FiveM Framework's and Lua Programmation.
 -> kb folder is a framework place to train AI and documentation.
 
+
+**Patch 1.0.1 : 09/08/2025**
+
+New Web_UI design, 'web_ui_newgen'
+To change the selected web_ui, you have to go in "server.py" and change the destination of the web interface.
 
 **Love**
