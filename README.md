@@ -17,7 +17,7 @@ CREATE A FILE NAMED : **AI**
 **After**, you have to create a venv with python : In AI Folder, open a CMD : 
 -> python -m venv .venv
 
---- **Add AI Model** from https://huggingface.co/ in AI/models folder. I personnaly used DeepSeekV2 Model to create the chatbot, but i'll try other models---
+--- **Add AI Model** from [https://huggingface.co/](https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Instruct-GGUF) in AI/models folder. I personnaly used DeepSeekV2 Model to create the chatbot, but i'll try other models---
 -> **Add in foliedouce.py** the model adress in default = ROOT / "models" / "yourmodel.gguf"
 Run CMD in AI Folder 
 
@@ -34,4 +34,15 @@ This Package had been designed by crbzz in order to create a chatbot that is spe
 
 New Web_UI design, 'web_ui_newgen'
 To change the selected web_ui, you have to go in "server.py" and change the destination of the web interface. # IT SHOULD BE THE SELECTED ONE
+
+
+**Patch 1.0.2 :**
+
+Additionnal model : https://huggingface.co/mradermacher/gpt5o-reflexion-q-agi-llama-3.1-8b-i1-GGUF 
+AI would use this model for chat texting, less powerfull but faster
+Now DeepSeek Model is used for Programming and Fixing Issues.
+
+Now that i know how to make an AI with a model, i'll do a chat and image generative AI.
+
+That's only the begenning :)
 
