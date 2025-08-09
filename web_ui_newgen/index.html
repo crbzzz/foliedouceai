@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FolieDouce – Chat Local</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="header-content">
+                <h1>FolieDouce</h1>
+                <span class="subtitle">IA locale (SSE + Build)</span>
+            </div>
+            <div class="header-decoration"></div>
+        </header>
+
+        <main id="chat" aria-live="polite"></main>
+
+        <form id="composer">
+            <div class="composer-inner">
+                <textarea id="input" rows="1" placeholder="Écris ta demande, en précisant ce que tu veux."></textarea>
+                <div class="actions">
+                    <button id="stop" type="button" title="Arrêter" hidden>
+                        <span class="stop-icon">⏹</span>
+                        Stop
+                    </button>
+                    <button id="send" type="submit">
+                        <span class="send-icon">✨</span>
+                        Envoyer
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
