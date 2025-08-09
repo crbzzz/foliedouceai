@@ -1,0 +1,39 @@
+name: TEMPLATE_FRAMEWORK
+detect:
+  aliases: ["alias1", "alias2"]
+  signatures:
+    - "regex_signature_1"
+    - "regex_signature_2"
+core:
+  get_core: "exports['fw']:GetCoreObject()  # exemple"
+  player_from_id: "FW.Functions.GetPlayer(source)"
+players:
+  identifier: "Player.Identifier"
+  job: "Player.Job.Name"
+  job_grade: "Player.Job.Grade"
+money:
+  add_money: "Player.Functions.AddMoney(account, amount)"
+  remove_money: "Player.Functions.RemoveMoney(account, amount)"
+inventory:
+  get_item: "Player.Functions.GetItemByName(name)"
+  add_item: "Player.Functions.AddItem(name, amount)"
+  remove_item: "Player.Functions.RemoveItem(name, amount)"
+items:
+  usable_register: "FW.Functions.CreateUseableItem(name, cb)"
+commands:
+  register: "FW.Commands.Add(name, desc, args, restricted, cb)"
+callbacks:
+  server_register: "FW.Functions.CreateCallback(name, cb)"
+  client: "FW.Functions.TriggerCallback(name, cb, ...)"
+notify:
+  client: "FW.Functions.Notify(message, type?)"
+events:
+  prefix_server: "fd"
+  rules:
+    - "Valider côté serveur"
+    - "Préfixer events fd:*"
+    - "Jamais de logique critique client"
+security:
+  validate_item_server: true
+notes:
+  - "Ajoute ici les particularités de ton framework."

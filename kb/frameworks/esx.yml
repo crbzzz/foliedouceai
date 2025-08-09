@@ -1,0 +1,43 @@
+name: ESX
+detect:
+  aliases: ["esx", "es_extended", "esx_legacy"]
+  signatures:
+    - "exports\\['es_extended'\\]"
+    - "ESX\\."
+core:
+  get_core: "exports['es_extended']:getSharedObject()  # ESX legacy"
+  player_from_id: "ESX.GetPlayerFromId(source)"
+  player_from_identifier: "ESX.GetPlayerFromIdentifier(identifier)"
+players:
+  identifier: "xPlayer.identifier"
+  job: "xPlayer.job"
+  job_grade: "xPlayer.job.grade"
+money:
+  add_account: "xPlayer.addAccountMoney(account, amount)  # 'money','bank','black_money'"
+  remove_account: "xPlayer.removeAccountMoney(account, amount)"
+  get_account: "xPlayer.getAccount(account).money"
+inventory:
+  get_item: "xPlayer.getInventoryItem(name)"
+  add_item: "xPlayer.addInventoryItem(name, count)"
+  remove_item: "xPlayer.removeInventoryItem(name, count)"
+items:
+  usable_register: "ESX.RegisterUsableItem(name, cb)"
+commands:
+  register: "ESX.RegisterCommand(name, group, cb, allowConsole, suggestion)"
+callbacks:
+  client: "ESX.TriggerServerCallback(name, cb, ...)"
+  server_register: "ESX.RegisterServerCallback(name, cb)"
+notify:
+  client: "TriggerClientEvent('esx:showNotification', src, message)"
+events:
+  prefix_server: "fd"
+  rules:
+    - "Valider inventaire/argent côté serveur avant effet"
+    - "Préfixer les events: fd:*"
+    - "Jamais de logique critique côté client"
+security:
+  validate_item_server: true
+  validate_money_server: true
+notes:
+  - "Certaines versions utilisent @es_extended/imports.lua pour ESX = exports['es_extended']"
+  - "Utiliser 'black_money' pour l’argent sale si activé"

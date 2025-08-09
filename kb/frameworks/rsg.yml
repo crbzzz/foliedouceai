@@ -1,0 +1,34 @@
+name: RSGCore
+detect:
+  aliases: ["rsg", "rsgcore", "rsg-core"]
+  signatures:
+    - "exports\\['rsg-core'\\]"
+    - "RSGCore\\."
+core:
+  get_core: "local RSGCore = exports['rsg-core']:GetCoreObject()"
+  player_from_id: "RSGCore.Functions.GetPlayer(source)"
+players:
+  identifier: "Player.PlayerData.citizenid  # selon implémentation RSGCore"
+  job: "Player.PlayerData.job.name"
+  job_grade: "Player.PlayerData.job.grade.level"
+money:
+  add_money: "Player.Functions.AddMoney(account, amount, reason?)"
+  remove_money: "Player.Functions.RemoveMoney(account, amount, reason?)"
+inventory:
+  get_item: "Player.Functions.GetItemByName(name)"
+  add_item: "Player.Functions.AddItem(name, amount, info?)"
+  remove_item: "Player.Functions.RemoveItem(name, amount, slot?)"
+items:
+  usable_register: "RSGCore.Functions.CreateUseableItem(name, cb)  # si disponible"
+notify:
+  client: "RSGCore.Functions.Notify(message, type?)"
+events:
+  prefix_server: "fd"
+  rules:
+    - "Toujours vérifier inventaire côté serveur"
+    - "Préférer events namespacés fd:*"
+    - "Natives et dicts RedM (pas GTA)"
+security:
+  validate_item_server: true
+notes:
+  - "Certaines versions n’exposent pas CreateUseableItem : passer par un event serveur + vérifs."

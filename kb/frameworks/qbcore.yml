@@ -1,0 +1,42 @@
+name: QBCore
+detect:
+  aliases: ["qb", "qbcore", "qbus"]
+  signatures:
+    - "exports\\['qb-core'\\]:GetCoreObject"
+    - "QBCore\\."
+core:
+  get_core: "local QBCore = exports['qb-core']:GetCoreObject()"
+  player_from_id: "QBCore.Functions.GetPlayer(source)"
+players:
+  identifier: "Player.PlayerData.citizenid"
+  job: "Player.PlayerData.job.name"
+  job_grade: "Player.PlayerData.job.grade.level"
+money:
+  add_money: "Player.Functions.AddMoney(account, amount, reason)"
+  remove_money: "Player.Functions.RemoveMoney(account, amount, reason)"
+  get_money: "Player.Functions.GetMoney(account)"
+  accounts: ["cash","bank","crypto"]
+inventory:
+  get_item: "Player.Functions.GetItemByName(name)"
+  add_item: "Player.Functions.AddItem(name, amount, info?)"
+  remove_item: "Player.Functions.RemoveItem(name, amount, slot?)"
+items:
+  usable_register: "QBCore.Functions.CreateUseableItem(name, cb)"
+commands:
+  register: "QBCore.Commands.Add(name, desc, args, restricted, cb)"
+callbacks:
+  server_register: "QBCore.Functions.CreateCallback(name, cb)"
+  client: "QBCore.Functions.TriggerCallback(name, cb, ...)"
+notify:
+  client: "QBCore.Functions.Notify(message, type?)  # 'success','error','primary'"
+events:
+  prefix_server: "fd"
+  rules:
+    - "Toujours re-check inventaire côté serveur"
+    - "Utiliser exports qb-core et Functions.* (pas de global approximatif)"
+    - "Préfixer les events: fd:*"
+security:
+  validate_item_server: true
+  validate_money_server: true
+notes:
+  - "Beaucoup de serveurs utilisent ox_inventory : adapter add/remove via ox si nécessaire"

@@ -1,0 +1,17 @@
+priority: ["rsg", "qbcore", "esx", "vorp"]
+rules:
+  rsg:
+    aliases: ["rsg", "rsgcore", "rsg-core"]
+    code_signatures: ["exports\\['rsg-core'\\]", "RSGCore\\."]
+  qbcore:
+    aliases: ["qb", "qbcore", "qbus"]
+    code_signatures: ["exports\\['qb-core'\\]:GetCoreObject", "QBCore\\."]
+  esx:
+    aliases: ["esx", "es_extended", "esx_legacy"]
+    code_signatures: ["exports\\['es_extended'\\]", "ESX\\."]
+  vorp:
+    aliases: ["vorp"]
+    code_signatures: ["exports\\.vorp_core", "VORP\\."]
+fallback:
+  framework_default: "rsg"
+  lang_default: "lua"

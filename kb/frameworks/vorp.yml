@@ -1,0 +1,34 @@
+name: VORP
+detect:
+  aliases: ["vorp"]
+  signatures:
+    - "exports\\.vorp_core"
+    - "VORP\\."
+core:
+  get_core: "local VORPcore = exports.vorp_core:vorpAPI()  # selon version"
+  player_from_id: "VORPcore.getUser(source)  # ou exports.vorp_core:getUser(source)"
+players:
+  identifier: "User.getIdentifier()  # selon wrapper"
+  character: "User.getUsedCharacter"
+money:
+  add_money: "Character.addCurrency(type, amount)  # 'money','gold','rol'"
+  remove_money: "Character.removeCurrency(type, amount)"
+inventory:
+  # VORP-inventory API varie selon version; ajuster en fonction de ta stack
+  add_item: "exports.vorp_inventory:addItem(src, name, amount)"
+  remove_item: "exports.vorp_inventory:subItem(src, name, amount)"
+  has_item: "exports.vorp_inventory:getItem(src, name)  # selon version"
+items:
+  usable_register: "exports.vorp_inventory:registerUsableItem(name, cb)  # si dispo, sinon event maison"
+notify:
+  client: "TriggerClientEvent('vorp:Tip', src, message, duration)  # duration ms"
+events:
+  prefix_server: "fd"
+  rules:
+    - "RedM uniquement (natives RDR2)"
+    - "Logique critique côté serveur"
+    - "Validation inventaire serveur"
+security:
+  validate_item_server: true
+notes:
+  - "API exacte dépend des versions VORP-core et vorp_inventory. Ajoute tes wrappers dans la KB si besoin."
