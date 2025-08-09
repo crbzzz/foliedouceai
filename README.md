@@ -34,6 +34,6 @@ This Package had been designed by crbzz in order to create a chatbot that is spe
 **Patch 1.0.1 : 09/08/2025**
 
 New Web_UI design, 'web_ui_newgen'
-To change the selected web_ui, you have to go in "server.py" and change the destination of the web interface.
+To change the selected web_ui, you have to go in "server.py" and change the destination of the web interface. # IT SHOULD BE THE SELECTED ONE
 
 **Love**
