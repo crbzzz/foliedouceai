@@ -1,0 +1,6 @@
+llama-cpp-python
+orjson
+pydantic==2.*
+rich
+pytest
+fastapi
