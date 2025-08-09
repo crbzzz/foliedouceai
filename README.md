@@ -1,6 +1,5 @@
 # foliedouceai
-FolieDouce is a random name for a random AI project around Models, python and chatbots. README explain how to use the project, localhosting, should use a good PC to run program :)
-
+FolieDouce is a random name for a random AI project around Models, python and chatbots. README explain how to use the project, localhosting, should use a good PC to run program.
 
 Developped by **crbzzz**
 
@@ -36,4 +35,3 @@ This Package had been designed by crbzz in order to create a chatbot that is spe
 New Web_UI design, 'web_ui_newgen'
 To change the selected web_ui, you have to go in "server.py" and change the destination of the web interface. # IT SHOULD BE THE SELECTED ONE
 
-**Love**
